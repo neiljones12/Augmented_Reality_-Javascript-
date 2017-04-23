@@ -16,7 +16,9 @@ namespace jonesneil
 
             bundles.Add(new ScriptBundle("~/bundles/aframe").Include(
                         "~/Scripts/three.js",
-                        "~/Scripts/ar.min.js"));
+                        "~/Scripts/OBJLoader.js",
+                         "~/Scripts/MTLLoader.js",
+                        "~/Scripts/ar.min.js")); 
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.

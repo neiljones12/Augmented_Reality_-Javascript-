@@ -214,6 +214,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\neil.png" />
+    <Content Include="Images\SimpleOffice_Texture.png" />
     <Content Include="Scripts\aframe-ar.js" />
     <Content Include="Scripts\aframe.min.js" />
     <Content Include="Scripts\angular.min.js" />
@@ -228,6 +229,8 @@
     <Content Include="Patterns\patt.nj" />
     <Content Include="Patterns\nj.pat" />
     <Content Include="Patterns\camera_para.dat" />
+    <Content Include="Images\office.mtl" />
+    <Content Include="Images\office.obj" />
     <None Include="Properties\PublishProfiles\neiljones - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\neiljones - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -239,6 +242,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\MTLLoader.js" />
+    <Content Include="Scripts\OBJLoader.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\tether.js" />
