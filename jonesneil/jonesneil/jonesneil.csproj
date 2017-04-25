@@ -215,6 +215,11 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\neil.png" />
     <Content Include="Images\SimpleOffice_Texture.png" />
+    <Content Include="Images\test\test_Body_Diffuse.png" />
+    <Content Include="Images\test\test_Body_Gloss.png" />
+    <Content Include="Images\test\test_Body_Normal.png" />
+    <Content Include="Images\test\test_Body_Opacity.png" />
+    <Content Include="Images\test\test_Body_Specular.png" />
     <Content Include="Scripts\aframe-ar.js" />
     <Content Include="Scripts\aframe.min.js" />
     <Content Include="Scripts\angular.min.js" />
@@ -223,15 +228,24 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\standard-male-figure.mtl" />
-    <Content Include="Images\standard-male-figure.obj" />
+    <Content Include="Images\male.obj" />
     <Content Include="Patterns\patt.hiro" />
-    <Content Include="Patterns\patt.nj" />
     <Content Include="Patterns\nj.pat" />
     <Content Include="Patterns\camera_para.dat" />
     <Content Include="Images\office.mtl" />
     <Content Include="Images\office.obj" />
+    <Content Include="Images\female.obj" />
+    <Content Include="Patterns\office.pat" />
+    <Content Include="Patterns\female.pat" />
+    <Content Include="Patterns\male.pat" />
+    <Content Include="Patterns\n.pat" />
+    <Content Include="Patterns\v.pat" />
+    <Content Include="Patterns\y.pat" />
+    <Content Include="Images\test\test.mtl" />
+    <Content Include="Images\test\test.obj" />
+    <None Include="Properties\PublishProfiles\neiljones - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\neiljones - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\neiljones - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\neiljones - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -276,6 +290,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Example1.cshtml" />
     <Content Include="web.config" />
+    <Content Include="Views\Home\Example2.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

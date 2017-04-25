@@ -17,5 +17,10 @@ namespace jonesneil.Controllers
         {
             return View();
         }
+
+        public ActionResult Example2()
+        {
+            return View();
+        }
     }
 }

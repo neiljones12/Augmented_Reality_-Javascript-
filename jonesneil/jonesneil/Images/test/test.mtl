@@ -1,0 +1,28 @@
+#
+#
+#
+
+newmtl Body Mesh_Body
+illum 2
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 512.000000
+map_Kd test_Body_Diffuse.png
+
+newmtl Eyes Mesh_Body
+illum 2
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 512.000000
+map_Kd test_Body_Diffuse.png
+
+newmtl default Mesh_Body
+illum 2
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 512.000000
+map_Kd test_Body_Diffuse.png
+

@@ -1,5 +1,4 @@
 ﻿<script>
-
     var renderer = new THREE.WebGLRenderer({
         antialias: true,
         alpha: true
@@ -11,20 +10,18 @@
     renderer.domElement.style.left = '0px'
     document.body.appendChild(renderer.domElement);
 
-    // array of functions for the rendering loop
     var onRenderFcts = [];
 
-    // init scene and camera
     var scene = new THREE.Scene();
 
     var camera = new THREE.Camera();
     scene.add(camera);
 
     var arToolkitSource = new THREEx.ArToolkitSource({
-        sourceType: 'webcam',
+        sourceType: 'webcam'
     })
-
     arToolkitSource.init(function onReady() {
+        console.log('source is ready')
         arToolkitSource.onResize(renderer.domElement)
     })
 
@@ -38,53 +35,141 @@
     })
 
     arToolkitContext.init(function onCompleted() {
+
         camera.projectionMatrix.copy(arToolkitContext.getProjectionMatrix());
     })
 
     onRenderFcts.push(function () {
         if (arToolkitSource.ready === false) return
-
         arToolkitContext.update(arToolkitSource.domElement)
-        scene.visible = camera.visible
     })
 
-    var markerControls = new THREEx.ArMarkerControls(arToolkitContext, camera, {
-        type: 'pattern',
-        patternUrl: '../../Patterns/nj.pat',
-        changeMatrixMode: 'cameraTransformMatrix'
-    })
+    ; (function () {
 
-    scene.visible = false
+        //Office
+        var object1 = new THREE.Group
+        object1.name = 'marker1'
+        scene.add(object1)
+        var markerControls = new THREEx.ArMarkerControls(arToolkitContext, object1, {
+            type: 'pattern',
+            patternUrl: '../../Patterns/office.pat',
+        })
 
-    var directionalLight = new THREE.DirectionalLight(0xffeedd);
-    directionalLight.position.set(1,1,1);
-    scene.add(directionalLight);
+        var loader = new THREE.OBJLoader();
 
+        var mtlLoader = new THREE.MTLLoader();
+        mtlLoader.setBaseUrl('/Images/');
+        mtlLoader.setPath('/Images/');
+        var url = "office.mtl";
+        mtlLoader.load(url, function (materials) {
 
-    var loader = new THREE.OBJLoader();
-    //loader.load('/Images/Street environment_V01.obj', function (object) {
-    //    scene.add(object);
-    //});
-     
-    var mtlLoader = new THREE.MTLLoader();
-    mtlLoader.setBaseUrl('/Images/');
-    mtlLoader.setPath('/Images/');
-    var url = "office.mtl";
-    mtlLoader.load(url, function (materials) {
+            materials.preload();
 
-        materials.preload();
+            var objLoader = new THREE.OBJLoader();
+            objLoader.setMaterials(materials);
+            objLoader.setPath('/Images/');
+            objLoader.load('office.obj', function (object) {
+                object1.add(object);
+            }, onProgress, onError);
 
-        var objLoader = new THREE.OBJLoader();
-        objLoader.setMaterials(materials);
-        objLoader.setPath('/Images/');
-        objLoader.load('office.obj', function (object) {
+        });
 
-            //object.position.y = -150;
-            scene.add(object);
+        //Male
+        var object2 = new THREE.Group
+        object2.name = 'marker2'
+        scene.add(object2)
+        var markerControls = new THREEx.ArMarkerControls(arToolkitContext, object2, {
+            type: 'pattern',
+            patternUrl: '../../Patterns/male.pat'
+        })
+        var loader = new THREE.OBJLoader();
+        loader.load('/Images/male.obj', function (object) {
+            object2.add(object);
+        });
 
-        }, onProgress, onError);
+        ////female
+        //var object3 = new THREE.Group
+        //object3.name = 'marker3'
+        //scene.add(object3)
+        //var markerControls = new THREEx.ArMarkerControls(arToolkitContext, object3, {
+        //    type: 'pattern',
+        //    patternUrl: '../../Patterns/female.pat'
+        //})
+        //var loader = new THREE.OBJLoader();
+        //loader.load('/Images/female.obj', function (object) {
+        //    object3.add(object);
+        //});
 
-    });
+        //Neil
+        var object4 = new THREE.Group
+        object4.name = 'marker4'
+        scene.add(object4)
+        var markerControls = new THREEx.ArMarkerControls(arToolkitContext, object4, {
+            type: 'pattern',
+            patternUrl: '../../Patterns/n.pat'
+        })
+        var loader = new THREE.OBJLoader();
+
+        var mtlLoader = new THREE.MTLLoader();
+        mtlLoader.setBaseUrl('/Images/test/');
+        mtlLoader.setPath('/Images/test/');
+        var url = "test.mtl";
+        mtlLoader.load(url, function (materials) {
+
+            materials.preload();
+
+            var objLoader = new THREE.OBJLoader();
+            objLoader.setMaterials(materials);
+            objLoader.setPath('/Images/test/');
+            objLoader.load('test.obj', function (object) {
+                object4.add(object);
+            }, onProgress, onError);
+
+        });
+
+        //Yash
+        var object5 = new THREE.Group
+        object5.name = 'marker5'
+        scene.add(object5)
+        var markerControls = new THREEx.ArMarkerControls(arToolkitContext, object5, {
+            type: 'pattern',
+            patternUrl: '../../Patterns/y.pat'
+        })
+        var loader = new THREE.OBJLoader();
+        loader.load('/Images/male.obj', function (object) {
+            object5.add(object);
+        });
+
+        //Vibhor
+        var object6 = new THREE.Group
+        object6.name = 'marker6'
+        scene.add(object6)
+        var markerControls = new THREEx.ArMarkerControls(arToolkitContext, object6, {
+            type: 'pattern',
+            patternUrl: '../../Patterns/v.pat'
+        })
+        var loader = new THREE.OBJLoader();
+        loader.load('/Images/male.obj', function (object) {
+            object6.add(object);
+        });
+
+    })()
+    ; (function () {
+        var object1 = scene.getObjectByName('marker1')
+        //var object2 = scene.getObjectByName('marker2')
+        //var object3 = scene.getObjectByName('marker3')
+        //var object4 = scene.getObjectByName('marker4')
+        //var object5 = scene.getObjectByName('marker5')
+        //var object5 = scene.getObjectByName('marker6')
+
+        var container = new THREE.Group
+        scene.add(container)
+
+        var directionalLight = new THREE.DirectionalLight(0xffeedd);
+        directionalLight.position.set(1, 1, 1);
+        scene.add(directionalLight);
+
+    })()
 
     var onProgress = function (xhr) {
         if (xhr.lengthComputable) {
@@ -95,13 +180,16 @@
 
     var onError = function (xhr) { };
 
+
     onRenderFcts.push(function () {
         renderer.render(scene, camera);
     })
 
     var lastTimeMsec = null
     requestAnimationFrame(function animate(nowMsec) {
+
         requestAnimationFrame(animate);
+
         lastTimeMsec = lastTimeMsec || nowMsec - 1000 / 60
         var deltaMsec = Math.min(200, nowMsec - lastTimeMsec)
         lastTimeMsec = nowMsec
