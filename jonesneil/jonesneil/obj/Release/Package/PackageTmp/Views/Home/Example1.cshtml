@@ -56,22 +56,9 @@
         })
 
         var loader = new THREE.OBJLoader();
-
-        var mtlLoader = new THREE.MTLLoader();
-        mtlLoader.setBaseUrl('/Images/');
-        mtlLoader.setPath('/Images/Male/');
-        var url = "JonDoe.mtl";
-        mtlLoader.load(url, function (materials) {
-
-            materials.preload();
-
-            var objLoader = new THREE.OBJLoader();
-            objLoader.setMaterials(materials);
-            objLoader.setPath('/Images/Male/');
-            objLoader.load('JonDoe.obj', function (object) {
-                object1.add(object);
-            }, onProgress, onError);
-
+        loader.setPath('/Images/');
+        loader.load('male.obj', function (object) {
+            object1.add(object);
         });
 
         //Office
