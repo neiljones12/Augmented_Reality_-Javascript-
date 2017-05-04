@@ -1,0 +1,60 @@
+#
+#
+#
+
+newmtl Beards Mesh_Beard
+illum 2
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 512.000000
+map_Kd JonDoe/JonDoe_Beard_Diffuse.png
+
+newmtl Body Mesh_Body
+illum 2
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 512.000000
+map_Kd JonDoe/JonDoe_Body_Diffuse.png
+
+newmtl Bottoms Mesh_Bottom
+illum 2
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 512.000000
+map_Kd JonDoe/JonDoe_Bottom_Diffuse.png
+
+newmtl Eyelashes Mesh_Body
+illum 2
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 512.000000
+map_Kd JonDoe/JonDoe_Body_Diffuse.png
+
+newmtl Shoes Mesh_Shoes
+illum 2
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 512.000000
+map_Kd JonDoe/JonDoe_Shoes_Diffuse.png
+
+newmtl Tops Mesh_Top
+illum 2
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 512.000000
+map_Kd JonDoe/JonDoe_Top_Diffuse.png
+
+newmtl default Mesh_Body
+illum 2
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 512.000000
+map_Kd JonDoe/JonDoe_Body_Diffuse.png
+

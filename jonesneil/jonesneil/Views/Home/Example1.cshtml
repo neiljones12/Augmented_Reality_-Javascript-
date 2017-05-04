@@ -4,7 +4,7 @@
         alpha: true
     });
     renderer.setClearColor(new THREE.Color('lightgrey'), 0)
-    renderer.setSize(640, 480);
+    renderer.setSize(400, 300);
     renderer.domElement.style.position = 'absolute'
     renderer.domElement.style.top = '0px'
     renderer.domElement.style.left = '0px'
@@ -31,7 +31,7 @@
 
     var arToolkitContext = new THREEx.ArToolkitContext({
         cameraParametersUrl: '../../Patterns/camera_para.dat',
-        detectionMode: 'mono',
+        detectionMode: 'mono'
     })
 
     arToolkitContext.init(function onCompleted() {
@@ -46,11 +46,39 @@
 
     ; (function () {
 
-        //Office
+        //Jon Doe
         var object1 = new THREE.Group
         object1.name = 'marker1'
         scene.add(object1)
-        var markerControls = new THREEx.ArMarkerControls(arToolkitContext, object1, {
+        var markerControls1 = new THREEx.ArMarkerControls(arToolkitContext, object1, {
+            type: 'pattern',
+            patternUrl: '../../Patterns/n.pat',
+        })
+
+        var loader = new THREE.OBJLoader();
+
+        var mtlLoader = new THREE.MTLLoader();
+        mtlLoader.setBaseUrl('/Images/');
+        mtlLoader.setPath('/Images/JonDoe/');
+        var url = "JonDoe.mtl";
+        mtlLoader.load(url, function (materials) {
+
+            materials.preload();
+
+            var objLoader = new THREE.OBJLoader();
+            objLoader.setMaterials(materials);
+            objLoader.setPath('/Images/JonDoe/');
+            objLoader.load('JonDoe.obj', function (object) {
+                object1.add(object);
+            }, onProgress, onError);
+
+        });
+
+        //Office
+        var object2 = new THREE.Group
+        object2.name = 'marker2'
+        scene.add(object2)
+        var markerControls2 = new THREEx.ArMarkerControls(arToolkitContext, object2, {
             type: 'pattern',
             patternUrl: '../../Patterns/office.pat',
         })
@@ -69,106 +97,56 @@
             objLoader.setMaterials(materials);
             objLoader.setPath('/Images/');
             objLoader.load('office.obj', function (object) {
-                object1.add(object);
+                object2.add(object);
             }, onProgress, onError);
 
         });
 
-        //Male
-        var object2 = new THREE.Group
-        object2.name = 'marker2'
-        scene.add(object2)
-        var markerControls = new THREEx.ArMarkerControls(arToolkitContext, object2, {
+       //Car
+        var object3 = new THREE.Group
+        object3.name = 'marker3'
+        scene.add(object3)
+        var markerControls3 = new THREEx.ArMarkerControls(arToolkitContext, object3, {
             type: 'pattern',
-            patternUrl: '../../Patterns/male.pat'
+            patternUrl: '../../Patterns/v.pat',
         })
-        var loader = new THREE.OBJLoader();
-        loader.load('/Images/male.obj', function (object) {
-            object2.add(object);
-        });
 
-        ////female
-        //var object3 = new THREE.Group
-        //object3.name = 'marker3'
-        //scene.add(object3)
-        //var markerControls = new THREEx.ArMarkerControls(arToolkitContext, object3, {
-        //    type: 'pattern',
-        //    patternUrl: '../../Patterns/female.pat'
-        //})
-        //var loader = new THREE.OBJLoader();
-        //loader.load('/Images/female.obj', function (object) {
-        //    object3.add(object);
-        //});
-
-        //Neil
-        var object4 = new THREE.Group
-        object4.name = 'marker4'
-        scene.add(object4)
-        var markerControls = new THREEx.ArMarkerControls(arToolkitContext, object4, {
-            type: 'pattern',
-            patternUrl: '../../Patterns/n.pat'
-        })
         var loader = new THREE.OBJLoader();
 
         var mtlLoader = new THREE.MTLLoader();
-        mtlLoader.setBaseUrl('/Images/test/');
-        mtlLoader.setPath('/Images/test/');
-        var url = "test.mtl";
+        mtlLoader.setBaseUrl('/Images/car/');
+        mtlLoader.setPath('/Images/car/');
+        var url = "1967-shelby-ford-mustang.mtl";
         mtlLoader.load(url, function (materials) {
 
             materials.preload();
 
             var objLoader = new THREE.OBJLoader();
             objLoader.setMaterials(materials);
-            objLoader.setPath('/Images/test/');
-            objLoader.load('test.obj', function (object) {
-                object4.add(object);
+            objLoader.setPath('/Images/car/');
+            objLoader.load('1967-shelby-ford-mustang.obj', function (object) {
+                object3.add(object);
             }, onProgress, onError);
 
-        });
-
-        //Yash
-        var object5 = new THREE.Group
-        object5.name = 'marker5'
-        scene.add(object5)
-        var markerControls = new THREEx.ArMarkerControls(arToolkitContext, object5, {
-            type: 'pattern',
-            patternUrl: '../../Patterns/y.pat'
-        })
-        var loader = new THREE.OBJLoader();
-        loader.load('/Images/male.obj', function (object) {
-            object5.add(object);
-        });
-
-        //Vibhor
-        var object6 = new THREE.Group
-        object6.name = 'marker6'
-        scene.add(object6)
-        var markerControls = new THREEx.ArMarkerControls(arToolkitContext, object6, {
-            type: 'pattern',
-            patternUrl: '../../Patterns/v.pat'
-        })
-        var loader = new THREE.OBJLoader();
-        loader.load('/Images/male.obj', function (object) {
-            object6.add(object);
         });
 
     })()
     ; (function () {
         var object1 = scene.getObjectByName('marker1')
-        //var object2 = scene.getObjectByName('marker2')
-        //var object3 = scene.getObjectByName('marker3')
-        //var object4 = scene.getObjectByName('marker4')
-        //var object5 = scene.getObjectByName('marker5')
-        //var object5 = scene.getObjectByName('marker6')
+        var object2 = scene.getObjectByName('marker2')
+        var object3 = scene.getObjectByName('marker3')
 
         var container = new THREE.Group
         scene.add(container)
 
+        var light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
+        scene.add( light );
+
+        /*
         var directionalLight = new THREE.DirectionalLight(0xffeedd);
         directionalLight.position.set(1, 1, 1);
         scene.add(directionalLight);
-
+        */
     })()
 
     var onProgress = function (xhr) {
