@@ -79,3 +79,4 @@ D:\Projects\Website\jonesneil\jonesneil\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Projects\Website\jonesneil\jonesneil\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\Projects\Website\jonesneil\jonesneil\obj\Debug\jonesneil.dll
 D:\Projects\Website\jonesneil\jonesneil\obj\Debug\jonesneil.pdb
+D:\Projects\Website\jonesneil\jonesneil\obj\Debug\jonesneil.csprojResolveAssemblyReference.cache

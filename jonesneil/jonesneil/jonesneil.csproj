@@ -231,6 +231,37 @@
     <Content Include="Images\car\posz.jpg" />
     <Content Include="Images\car\posz.png" />
     <Content Include="Images\car\tires_bump.JPG" />
+    <Content Include="Images\Code.png" />
+    <Content Include="Images\Male_Body_Diffuse.png" />
+    <Content Include="Images\Male_Body_Gloss.png" />
+    <Content Include="Images\Male_Body_Normal.png" />
+    <Content Include="Images\Male_Body_Opacity.png" />
+    <Content Include="Images\Male_Body_Specular.png" />
+    <Content Include="Images\Male_Bottom_Diffuse.png" />
+    <Content Include="Images\Male_Bottom_Gloss.png" />
+    <Content Include="Images\Male_Bottom_Normal.png" />
+    <Content Include="Images\Male_Bottom_Opacity.png" />
+    <Content Include="Images\Male_Bottom_Specular.png" />
+    <Content Include="Images\Male_Eyewear_Diffuse.png" />
+    <Content Include="Images\Male_Eyewear_Gloss.png" />
+    <Content Include="Images\Male_Eyewear_Normal.png" />
+    <Content Include="Images\Male_Eyewear_Opacity.png" />
+    <Content Include="Images\Male_Eyewear_Specular.png" />
+    <Content Include="Images\Male_Hair_Diffuse.png" />
+    <Content Include="Images\Male_Hair_Gloss.png" />
+    <Content Include="Images\Male_Hair_Normal.png" />
+    <Content Include="Images\Male_Hair_Opacity.png" />
+    <Content Include="Images\Male_Hair_Specular.png" />
+    <Content Include="Images\Male_Shoes_Diffuse.png" />
+    <Content Include="Images\Male_Shoes_Gloss.png" />
+    <Content Include="Images\Male_Shoes_Normal.png" />
+    <Content Include="Images\Male_Shoes_Opacity.png" />
+    <Content Include="Images\Male_Shoes_Specular.png" />
+    <Content Include="Images\Male_Top_Diffuse.png" />
+    <Content Include="Images\Male_Top_Gloss.png" />
+    <Content Include="Images\Male_Top_Normal.png" />
+    <Content Include="Images\Male_Top_Opacity.png" />
+    <Content Include="Images\Male_Top_Specular.png" />
     <Content Include="Images\neil.png" />
     <Content Include="Images\SimpleOffice_Texture.png" />
     <Content Include="Scripts\aframe-ar.js" />
@@ -241,7 +272,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\male.obj" />
+    <Content Include="Images\Backup\male.obj" />
     <Content Include="Patterns\patt.hiro" />
     <Content Include="Patterns\nj.pat" />
     <Content Include="Patterns\camera_para.dat" />
@@ -257,6 +288,8 @@
     <Content Include="Images\female.mtl" />
     <Content Include="Images\car\1967-shelby-ford-mustang.mtl" />
     <Content Include="Images\car\1967-shelby-ford-mustang.obj" />
+    <Content Include="Images\Male.mtl" />
+    <Content Include="Images\Male.obj" />
     <None Include="Properties\PublishProfiles\neiljones - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\neiljones - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\neiljones - Web Deploy %282%29.pubxml" />

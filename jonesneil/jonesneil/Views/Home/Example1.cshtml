@@ -55,10 +55,29 @@
             patternUrl: '../../Patterns/n.pat',
         })
 
+        //var loader = new THREE.OBJLoader();
+        //loader.setPath('/Images/');
+        //loader.load('male.obj', function (object) {
+        //    object1.add(object);
+        //});
+
         var loader = new THREE.OBJLoader();
-        loader.setPath('/Images/');
-        loader.load('male.obj', function (object) {
-            object1.add(object);
+
+        var mtlLoader = new THREE.MTLLoader();
+        mtlLoader.setBaseUrl('/Images/');
+        mtlLoader.setPath('/Images/');
+        var url = "male.mtl";
+        mtlLoader.load(url, function (materials) {
+
+            materials.preload();
+
+            var objLoader = new THREE.OBJLoader();
+            objLoader.setMaterials(materials);
+            objLoader.setPath('/Images/');
+            objLoader.load('male.obj', function (object) {
+                object1.add(object);
+            }, onProgress, onError);
+
         });
 
         //Office
@@ -89,7 +108,7 @@
 
         });
 
-       //Car
+        //Car
         var object3 = new THREE.Group
         object3.name = 'marker3'
         scene.add(object3)
@@ -126,8 +145,8 @@
         var container = new THREE.Group
         scene.add(container)
 
-        var light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
-        scene.add( light );
+        var light = new THREE.HemisphereLight(0xffffbb, 0x080820, 1);
+        scene.add(light);
 
         /*
         var directionalLight = new THREE.DirectionalLight(0xffeedd);
